@@ -30,4 +30,14 @@ public class Utils {
     public static char ilkKarakteriAl(String str){
         return str.charAt(str.length()-1);
     }
+    public static int rakamlarToplamiAl(int x){
+        int toplam=0;
+
+        while (x>0){
+           toplam+=x%10;
+           x=x/10;
+        }
+
+        return toplam;
+    }
 }

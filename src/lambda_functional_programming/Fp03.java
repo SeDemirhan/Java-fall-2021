@@ -37,6 +37,9 @@ public class Fp03 {
         //uzunlugu8ile10Araive0IleBiteniSil(liste);
 
         //1) Tüm elemanları büyük harf ile yazdıran bir method oluşturun.
+        System.out.println("uzunlugu 12en az mı? : " + uzunluguOnikidenAzMi(liste));
+        System.out.println("xXile baslamıyor mu ? :" + xIleBaslamiyorMu(liste));
+        System.out.println("rIleBitenVarMi(liste) = " + rIleBitenVarMi(liste));
 
 
     }
@@ -101,5 +104,24 @@ public class Fp03 {
     }
     ==> list, mutable olduğu için elemanları işlem sonrası kalıcı değiştiğinden yorum yapıyorum.
      */
+
+    //9) Tüm elemanların uzunluklarının 12'den az olup olmadığını kontrol eden bir method oluşturun.
+
+    public static boolean uzunluguOnikidenAzMi(List<String>list){
+        return list.stream().allMatch(t->t.length()<12);
+    }
+
+    //10) Hiçbir elemanın 'X' ile başlamadığını kontrol eden bir method oluşturun.
+
+    public static boolean xIleBaslamiyorMu(List<String>list){
+        return list.stream().noneMatch(t->t.startsWith("X"));
+
+
+    }
+    //11) Herhangi bir elemanın 'r' ile bitip bitmediğini kontrol eden bir method oluşturun.
+    public static boolean rIleBitenVarMi(List<String>list){
+        return list.stream().anyMatch(t->t.endsWith("r"));
+
+    }
 
 }
